@@ -1,6 +1,7 @@
 import math
 import matplotlib.pyplot as plt
 
+# Function to implement Stirling Number of the Second Kind
 def stirling_second_kind(n, k):
     if k > n: 
         return 0
@@ -11,6 +12,8 @@ def stirling_second_kind(n, k):
     # Recurrence: S(n, k) = k * S(n-1, k) + S(n-1, k-1)
     return k * stirling_second_kind(n-1, k) + stirling_second_kind(n-1, k-1)
 
+# The below function is equivalent to:
+# P(A'') = \left(\frac{1}{d^{m+n}}\right)\sum^m_{i=0} \sum^n_{j=0}S_2(m,i)S_2(n,j)\prod^{i+j-1}_{k=0}d-k
 def no_birthday_collision_probability(m, n, d=365):
     total_ways = d**(m+n) # Implementing for 1/d^(m+n), this is the basic 
     count_no_collisions = 0
