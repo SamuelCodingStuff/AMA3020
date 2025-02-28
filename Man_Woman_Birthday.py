@@ -1,6 +1,3 @@
-import math
-import matplotlib.pyplot as plt
-
 # Function to implement Stirling Number of the Second Kind
 def stirling_second_kind(n, k):
     if k > n: 
